@@ -20,7 +20,13 @@ const eqArrays = function(arr1, arr2) {
 };
 
 const without = function(source, itemsToRemove) {
-  return source.filter(item => !itemsToRemove.includes(item));
+  let removed = [];
+  for (let i = 0; i < source.length; i++) {
+    if (!itemsToRemove.includes(source[i])) {
+      removed.push(source[i]);
+    }
+  }
+  return removed;
 }
 
 const words = ["hello", "world", "lighthouse"];
