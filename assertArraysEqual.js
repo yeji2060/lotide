@@ -1,13 +1,25 @@
+const assertArraysEqual = function(arr1, arr2) {
+  if (eqArrays(arr1,arr2) == true) {
+    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
+  }
+}
+
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+
 const args = process.argv;
 let arr = args.slice(2);
 
-  if (arr[0].length !== arr[1].length) {
-    return console.log("false");
-  }
-  
-  for (let i = 0; i < arr[0].length; i++) {
-    if (arr[0][i] !== arr[1][i]) {
-      return console.log("false");
-    }
-  }
-  return console.log("true");
+assertArraysEqual(arr[0],arr[1]);
