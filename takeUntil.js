@@ -24,10 +24,11 @@ const takeUntil = function(array, callback) {
   for (let item of array) {
     if (!callback(item)) {
       result.push(item);
-    } else if (callback(item) ) {
+    }else {
       return result;
     }
   }
+  return result;
 }
 
 
