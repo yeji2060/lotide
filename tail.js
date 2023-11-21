@@ -6,6 +6,8 @@ const tail = function(array) {
     newArray.push(array[i]);
   }
   return newArray;
+
+  // return array.slice(1); 
 };
 
 module.exports = tail;
